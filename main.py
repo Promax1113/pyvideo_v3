@@ -1,10 +1,10 @@
-import os
-
 import praw
+
 
 from security import get_key_and_name
 from scrapper import get_post_list
-from sys import platform
+
+
 
 if __name__ == "__main__":
     name, key = get_key_and_name()

@@ -1,7 +1,7 @@
 import praw
 
 
-def get_post_list(instance: praw.Reddit, subreddit: str, mode: str = "hot", amount: int = 10) -> list[praw.Reddit.submission]:
+def get_post_list(instance: praw.Reddit, subreddit: str, mode: str = "hot", amount: int = 10) -> list:
     print(f"Fetching {mode} {amount} post(s) from {subreddit}...")
     print("Keep in mind that the NSFW posts will be removed afterwards.")
     match mode:
@@ -13,5 +13,3 @@ def get_post_list(instance: praw.Reddit, subreddit: str, mode: str = "hot", amou
             return [submission for submission in instance.subreddit(subreddit).rising(limit=amount)]
         case "new":
             return [submission for submission in instance.subreddit(subreddit).new(limit=amount)]
-
-
