@@ -1,3 +1,5 @@
+
+setup/config.ini
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -163,3 +165,6 @@ cython_debug/
 *.env
 .vscode
 .*
+
+
+setup/config.ini

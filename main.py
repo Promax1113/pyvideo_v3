@@ -6,7 +6,6 @@ from scrapper import get_post_list
 from setup import setup
 
 
-
 if __name__ == "__main__":
     name, key = get_key_and_name()
     config = setup()
@@ -15,7 +14,12 @@ if __name__ == "__main__":
     submissions: list = []
 
     # TODO Make a small user inteface that asks which subreddit and all that stuff.
-    for post in get_post_list(instance=ins, subreddit=config["name"], time_filter=config["top_filter"], mode=config["mode"]):
+    for post in get_post_list(
+        instance=ins,
+        subreddit=config["subreddit"]["name"],
+        time_filter=config["subreddit"]["top_filter"],
+        mode=config["subreddit"]["mode"],
+    ):
         if post.over_18:
             continue
         submissions.append({"title": post.title, "submission": post})
