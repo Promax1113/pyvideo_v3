@@ -48,7 +48,7 @@ def setup() -> dict:
                             data.write(configfile)
                     runnning = False
 
-            case "exit":
+            case "discard":
                 if choice.Binary("Are you sure you want to discard?").ask():
                     data = get_config_from_file()
                     runnning = False

@@ -10,7 +10,11 @@ if __name__ == "__main__":
     name, key = get_key_and_name()
     config = setup()
 
-    ins = praw.Reddit(client_id=name, client_secret=key, user_agent="scrapper")
+    ins = praw.Reddit(
+        client_id=config["scrapper"]["name"],
+        client_secret=config["scrapper"]["key"],
+        user_agent="scrapper",
+    )
     submissions: list = []
 
     # TODO Make a small user inteface that asks which subreddit and all that stuff.
